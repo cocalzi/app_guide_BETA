@@ -14,6 +14,7 @@
 
 .section-header {
   margin: 0;
+
 }
 
 .app-container {
@@ -79,6 +80,8 @@ input {
 
 /* Overlay di caricamento */
 .overlay {
+  display: flex;
+  flex-direction: column;
   position: fixed; /* Fisso sopra tutto */
   top: 0;
   left: 0;
@@ -112,6 +115,7 @@ input {
   border-top: 5px solid #007bff; /* Parte superiore blu (o il colore che vuoi) */
   border-radius: 50%; /* Lo rende rotondo */
   animation: spin 1s linear infinite; /* Lo fa girare all'infinito */
+  background: none;
 }
 
 /* 4. Definizione dell'animazione */
@@ -127,4 +131,5 @@ input {
 .loadingStringStyle {
   /*background-color: rgba(255, 255, 255, 0.5);*/
   margin: 0;
+  background: none;
 }
