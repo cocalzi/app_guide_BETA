@@ -7,6 +7,8 @@ console.log(tabRows);
 let index = getCachedIndex();
 console.log(index);
 
+const tableTag = document.querySelector(".data-table"); //salva table per event delegation
+//console.log(tableTag);
 drawRowsOnBoot();
 
 let btnInsert = document.getElementById("insertBtn");
@@ -63,7 +65,7 @@ function cacheTabRow(dateData, timeData, kmData, nameData, positionData, indexDa
         km: kmData,
         name: nameData,
         position: positionData,
-        index: indexData
+        id: indexData
     }
 
     tabRows.push(newRowObjt);
@@ -109,16 +111,41 @@ function addRow() {
                         <td>${tabRows[index].km}</td>
                         <td>${tabRows[index].name}</td>
                         <td>${tabRows[index].position}</td>
-                        <td><button data-id="${index}">-</button></td>        
+                        <td><button class="delete-btn" data-id="${index}">-</button></td>        
                     </tr>`;
 
     const tbodyTag = document.getElementById("tbody");
     tbodyTag.insertAdjacentHTML("beforeend", newRow);
-    
+
+    document.getElementById("");
 
     deleteInputValues();
 }
 
+tableTag.addEventListener("click", function (event) { //event Listener del body della tabella
+    //per eliminazione righe singole
+
+    if (event.target.classList.contains("delete-btn")) {//rimuovere riga dal DOM
+
+        const idToDelete = parseInt(event.target.getAttribute("data-id"));
+
+        tabRows = tabRows.filter(element => element.id !== idToDelete);
+        console.log(tabRows);
+        cacheEmptyTabRow()
+        const rowToRemove = document.getElementById(`row-${idToDelete}`);
+
+        if (rowToRemove) {
+
+            rowToRemove.remove();
+
+        }
+    }
+
+});
+
+
+
+/*
 function addRow2() {
     const tbodyTag = document.getElementById("tbody");
     let newRow = document.createElement("tr");
@@ -141,7 +168,7 @@ function addRow2() {
     tbodyTag.appendChild(newRow);
 
 }
-
+*/
 
 function deleteInputValues() {
     const nameInputLabel = document.getElementById("name");
@@ -185,13 +212,13 @@ function drawRowsOnBoot() {
     tabRows.forEach(element => {
 
         const newRow =
-            `<tr id="row-${element.index}">
+            `<tr id="row-${element.id}">
                         <td>${element.date}</td>
                         <td>${element.time}</td>
                         <td>${element.km}</td>
                         <td>${element.name}</td>
                         <td>${element.position}</td>
-                        <td><button data-id="${element.index}">-</button></td>        
+                        <td><button class="delete-btn" data-id="${element.id}">-</button></td>        
                     </tr>`;
 
         const tbodyTag = document.getElementById("tbody");
@@ -220,7 +247,7 @@ const getCoordinate = () => {
 
 async function startGeoLocalization() { //async-await poiché il dato può non essere ricevuto subito
 
-    showLoadingScreen()
+    showLoadingScreen();
 
     let position = "";
 

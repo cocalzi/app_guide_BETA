@@ -133,3 +133,11 @@ input {
   margin: 0;
   background: none;
 }
+
+.delete-btn{
+  border-radius: 1rem;
+  
+  padding: 3px 3px;
+  background-color: rgb(255, 222, 37);
+  font-size: 2rem;
+}
