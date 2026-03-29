@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Font -->
+    <!-- Oswald
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <!-- Fine Google Font -->
+    <!-- Icone google-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--Fine icone google-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveApp</title>
+    <link rel="shortcut icon" href="https://d1q40j6jx1d8h6.cloudfront.net/Obituaries/28932098/Thumbnail.webp"
+        type="image/x-icon">
+  <script type="module" crossorigin src="./assets/index-DomgR1Tq.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BPC8FDa-.css">
+</head>
+
+<body>
+    <main class="app-container">
+
+        <header class="section-header">
+            <h1 class="title">Drink&Drive #BETA-TySc</h1>
+        </header>
+
+        <div class="input-group">
+            <span id="nameTag"><input id="name" placeholder=" Nome"> <input id="rememberName" type="checkbox"><label
+                    for="rememberName"> Ricorda il nome </label> </span>
+            <span id="kmTag"><input id="km" placeholder=" Km" type="number"> <input id="rememberKm"
+                    type="checkbox"><label for="rememberKm"> Ricorda i
+                    km </label> </span>
+        </div>
+
+        <div class="actions-group">
+            <button id="insertBtn" class="btn-style">Inserisci <span class="material-symbols-outlined">
+                    add_circle
+                </span></button>
+            <button id="clearBtn" class="btn-clear-style">Cancella <span class="material-symbols-outlined">
+                    cancel
+                </span></button>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="data-table">
+                <!-- Icona bidone: <span class="material-symbols-outlined">delete_sweep</span> -->
+                <thead>
+                    <tr>
+                        <th scope="col">Data</th>
+                        <th scope="col">Ora</th>
+                        <th scope="col">Km</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Posizione</th>
+                        <th scope="col">-</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div id="loaderOverlay" class="overlay hidden">
+        <p id="loadingString" class="loadingStringStyle"></p>
+        <div class="spinner"></div>
+    </div>
+
+    <dialog id="dialog" class="dialog-style">
+        <h3 class="dialog-title-style">Dettagli Posizione</h3>
+        <div id="dialogTextContainer" class="dialogInputTextContainer-style">
+            <input id="dialogInputText"></input>
+
+            <p id="dialogCoordinatesText" class="dialogText-Style"></p>
+            <p id="dialogText" class="dialogText-Style">Qui andrà il testo dinamico</p>
+        </div>
+        <div class="closeDialogBtn-container">
+            <button id="closeAndSaveDialogBtn" class="dialogBtn-style">Salva e Chiudi</button>
+            <button id="closeDialogBtn" class="dialogBtn-style">Chiudi</button>
+        </div>
+    </dialog>
+
+</body>
+
+</html>
