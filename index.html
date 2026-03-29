@@ -23,30 +23,41 @@
     <title>DriveApp</title>
     <link rel="shortcut icon" href="https://d1q40j6jx1d8h6.cloudfront.net/Obituaries/28932098/Thumbnail.webp"
         type="image/x-icon">
-  <script type="module" crossorigin src="./assets/index-lEA6alKs.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BPC8FDa-.css">
+  <script type="module" crossorigin src="./assets/index-3-OfUjZs.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D36hJAf8.css">
 </head>
 
 <body>
     <main class="app-container">
 
-        <header class="section-header">
-            <h1 class="title">Drink&Drive #BETA-TySc</h1>
-        </header>
-
+        <div class="header-container-style">
+            <header class="section-header">
+                <h1 class="title">Drink&Drive #BETA</h1>
+            </header>
+        </div>
         <div class="input-group">
-            <span id="nameTag"><input id="name" placeholder=" Nome"> <input id="rememberName" type="checkbox"><label
-                    for="rememberName"> Ricorda il nome </label> </span>
-            <span id="kmTag"><input id="km" placeholder=" Km" type="number"> <input id="rememberKm"
-                    type="checkbox"><label for="rememberKm"> Ricorda i
-                    km </label> </span>
+            <div class="dialog-position-input-style">
+                <span class="material-symbols-outlined">
+                    person_edit
+                </span>
+                <input id="name" placeholder=" Nome"> <input id="rememberName" type="checkbox"><label
+                    for="rememberName"> Ricorda il nome </label>
+            </div>
+            <div class="dialog-position-input-style">
+                <span class="material-symbols-outlined">
+                    distance
+                </span>
+                <input id="km" placeholder=" Km" type="number"> <input id="rememberKm" type="checkbox"><label
+                    for="rememberKm"> Ricorda i
+                    km </label>
+            </div>
         </div>
 
         <div class="actions-group">
-            <button id="insertBtn" class="btn-style">Inserisci <span class="material-symbols-outlined">
+            <button id="insertBtn" class="btn-style">Inserisci guida<span class="material-symbols-outlined">
                     add_circle
                 </span></button>
-            <button id="clearBtn" class="btn-clear-style">Cancella <span class="material-symbols-outlined">
+            <button id="clearBtn" class="btn-clear-style">Cancella tutto<span class="material-symbols-outlined">
                     cancel
                 </span></button>
         </div>
@@ -77,10 +88,18 @@
     </div>
 
     <dialog id="dialog" class="dialog-style">
-        <h3 class="dialog-title-style">Dettagli Posizione</h3>
+        <div class="dialog-title-style">
+            <h3 class="dialog-title-style">Dettagli Posizione<span class="material-symbols-outlined">
+                    location_on
+                </span></h3>
+        </div>
         <div id="dialogTextContainer" class="dialogInputTextContainer-style">
-            <input id="dialogInputText" type="text"></input>
-
+            <div class="dialog-position-input-style">
+                <span class="material-symbols-outlined">
+                    edit_note
+                </span>
+                <input id="dialogInputText" type="text"></input>
+            </div>
             <p id="dialogCoordinatesText" class="dialogText-Style"></p>
             <p id="dialogText" class="dialogText-Style">Qui andrà il testo dinamico</p>
         </div>
@@ -89,7 +108,16 @@
             <button id="closeDialogBtn" class="dialogBtn-style">Chiudi</button>
         </div>
     </dialog>
-
+    <dialog id="dialogClearBtn" class="dialog-style">
+        <h3 class="dialog-title-style">Attenzione</h3>
+        <div id="dialogTextContainer" class="dialogInputTextContainer-style">
+            <p id="dialogText" class="dialogText-Style">Cancellare tutte le guide in memoria?</p>
+        </div>
+        <div class="closeDialogBtn-container">
+            <button id="confirmClearBtn" class="dialogBtn-style">Sì</button>
+            <button id="closeClearDialogBtn" class="dialogBtn-style">Annulla</button>
+        </div>
+    </dialog>
 </body>
 
 </html>
