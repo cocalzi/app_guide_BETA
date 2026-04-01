@@ -24,8 +24,8 @@
     <title>DriveApp</title>
     <link rel="shortcut icon" href="https://d1q40j6jx1d8h6.cloudfront.net/Obituaries/28932098/Thumbnail.webp"
         type="image/x-icon">
-  <script type="module" crossorigin src="./assets/index-DNID0WkQ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DuxirVE5.css">
+  <script type="module" crossorigin src="./assets/index-DD9UHnIo.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bjza5ps6.css">
 </head>
 
 <body>
@@ -58,6 +58,18 @@
                     for="rememberKm"> Ricorda i
                     km </label>
             </div>
+            <div class="dialog-position-input-style">
+                <span class="material-symbols-outlined">
+                    car_tag
+                </span>
+                <input id="telepass" placeholder=" Es. 2" type="number"><label>Telepass</label>
+            </div>
+            <div class="dialog-position-input-style">
+                <span class="material-symbols-outlined">
+                    local_gas_station
+                </span>
+                <input id="refueling" placeholder=" Es. 40,32" type="number"><label>Carburante</label>
+            </div>
         </div>
 
         <div class="actions-group">
@@ -79,6 +91,8 @@
                         <th scope="col">Ora</th>
                         <th scope="col">Km</th>
                         <th scope="col">Nome</th>
+                        <th scope="col">Telepass</th>
+                        <th scope="col">Carburante</th>
                         <th scope="col">Posizione</th>
                         <th scope="col">-</th>
                     </tr>
@@ -96,11 +110,10 @@
     </div>
 
     <dialog id="dialog" class="dialog-style">
-
-            <h3 class="dialog-title-style">Dettagli Posizione<span class="material-symbols-outlined">
-                    location_on
-                </span></h3>
-
+        <h3 class="dialog-title-style">Dettagli Posizione<span class="material-symbols-outlined">
+                location_on
+            </span>
+        </h3>
         <div id="dialogTextContainer" class="dialogInputTextContainer-style">
             <div class="dialog-position-input-style">
                 <span class="material-symbols-outlined">
